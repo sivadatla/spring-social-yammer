@@ -25,6 +25,8 @@ public class YammerOAuth2Template extends OAuth2Template {
 
 	public YammerOAuth2Template(String clientId, String clientSecret) {
 		super(clientId, clientSecret, "https://www.yammer.com/dialog/oauth", "https://www.yammer.com/oauth2/access_token");
+		//Yammer requires client_id and client_secret as part of access_token POST
+		setUseParametersForClientAuthentication(true);
 	}
 	
 	@SuppressWarnings("unchecked")
